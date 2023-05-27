@@ -16,7 +16,7 @@
 # -----------------------------------------------------------------
 # Lineage OTA update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/lineage-$(LINEAGE_VERSION).zip
+LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/ArbitrarilyTong-$(LINEAGE_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
@@ -24,4 +24,20 @@ SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(LINEAGE_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
+	echo -e "#######################################################################################";
+	echo -e " __          __    _                                _                                  ";
+	echo -e " \ \        / /   | |                              | |                                 ";
+	echo -e "  \ \  /\  / /___ | |  ___  ___   _ __ ___    ___  | |_  ___                           ";
+	echo -e "   \ \/  \/ // _ \| | / __|/ _ \ | '_ \` _ \  / _ \ | __|/ _ \                         ";
+	echo -e "    \  /\  /|  __/| || (__| (_) || | | | | ||  __/ | |_| (_) |                         ";
+	echo -e "     \/  \/  \___||_| \___|\___/ |_| |_| |_| \___|  \__|\___/                          ";
+	echo -e "                  _      _  _                      _  _      _______                   ";
+	echo -e "     /\          | |    (_)| |                    (_)| |    |__   __|                  ";
+	echo -e "    /  \    _ __ | |__   _ | |_  _ __  __ _  _ __  _ | | _   _ | |  ___   _ __    __ _ ";
+	echo -e "   / /\ \  | '__|| '_ \ | || __|| '__|/ _\` || '__|| || || | | || | / _ \ | '_ \  / _\|";
+	echo -e "  / ____ \ | |   | |_) || || |_ | |  | (_| || |   | || || |_| || || (_) || | | || (_| |";
+	echo -e " /_/    \_\|_|   |_.__/ |_| \__||_|   \__,_||_|   |_||_| \__, ||_| \___/ |_| |_| \__, |";
+	echo -e "                                                          __/ |                   __/ |";
+	echo -e "                                                         |___/                   |___/ ";
+	echo -e "#######################################################################################";
 	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
