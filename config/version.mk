@@ -4,7 +4,7 @@ TONG_GAPPS := true
 
 # GAPPS or VANILLA
 ifeq ($(TONG_GAPPS), true)
-    $(call inherit-product, vendor/gapps/common/common-vendor.mk)
+    $(call inherit-product, vendor/gapps/common.mk)
     PRODUCT_TYPE := GAPPS
 else
     PRODUCT_TYPE := VANILLA
