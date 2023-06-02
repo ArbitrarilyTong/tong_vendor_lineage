@@ -1,6 +1,13 @@
 PRODUCT_VERSION_MAJOR = 20
 PRODUCT_VERSION_MINOR = 0
-PRODUCT_TYPE = GAPPS
+TONG_GAPPS := true
+
+# GAPPS or VANILLA
+ifeq ($(TONG_GAPPS), true)
+    $(call inherit-product, vendor/gapps/common/common-vendor.mk)
+    PRODUCT_TYPE := GAPPS
+endif
+
 
 ifeq ($(LINEAGE_VERSION_APPEND_TIME_OF_DAY),true)
     LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d_%H%M%S)
@@ -28,11 +35,6 @@ ifeq ($(LINEAGE_BUILDTYPE), UNOFFICIAL)
     ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
         LINEAGE_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
     endif
-endif
-
-# GAPPS or VANILLA
-ifeq ($(PRODUCT_TYPE), GAPPS)
-	$(call inherit-product, vendor/gapps/common/common-vendor.mk)
 endif
 
 LINEAGE_VERSION_SUFFIX := $(LINEAGE_BUILD_DATE)-$(LINEAGE_BUILDTYPE)$(LINEAGE_EXTRAVERSION)-$(LINEAGE_BUILD)-$(PRODUCT_TYPE)
