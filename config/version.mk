@@ -6,6 +6,8 @@ TONG_GAPPS := true
 ifeq ($(TONG_GAPPS), true)
     $(call inherit-product, vendor/gapps/common/common-vendor.mk)
     PRODUCT_TYPE := GAPPS
+else
+    PRODUCT_TYPE := VANILLA
 endif
 
 
